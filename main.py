@@ -1,12 +1,16 @@
-from flask import Flask
+from flask import Flask render_template
 
 app = Flask(__name__)
 
 
 app.route('/')
 def index():
-    return "Sveiki"
+    return render_template("index.html")
+
+app.route('/')
+def about():
+    return render_template("about.html")
 
 
 if __name__ =="__maim__":
-    app.run()
+    app.run(debug=True)
